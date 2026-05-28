@@ -1,0 +1,303 @@
+Label	Replace by
+crop monitoring	1. IA para agricultura de precisão
+crop growth	1. IA para agricultura de precisão
+ndvi	1. IA para agricultura de precisão
+vegetation index	1. IA para agricultura de precisão
+vegetation indices	1. IA para agricultura de precisão
+vigor	1. IA para agricultura de precisão
+canopy	1. IA para agricultura de precisão
+gap detection	1. IA para agricultura de precisão
+crop status	1. IA para agricultura de precisão
+plant status	1. IA para agricultura de precisão
+field monitoring	1. IA para agricultura de precisão
+crop canopy	1. IA para agricultura de precisão
+smart farm	1. IA para agricultura de precisão
+smart farming	1. IA para agricultura de precisão
+precision farming	1. IA para agricultura de precisão
+agriculture 4.0	1. IA para agricultura de precisão
+farming 4.0	1. IA para agricultura de precisão
+agrifood 4.0	1. IA para agricultura de precisão
+ai in agriculture	1. IA para agricultura de precisão
+artificial intelligence in agriculture	1. IA para agricultura de precisão
+agricultural applications of artificial intelligence	1. IA para agricultura de precisão
+smart agriculture	1. IA para agricultura de precisão
+smart agricultural	1. IA para agricultura de precisão
+computer vision	1. IA para agricultura de precisão
+variable rate	1. IA para agricultura de precisão
+vra	1. IA para agricultura de precisão
+localized spraying	1. IA para agricultura de precisão
+fertilizer application	1. IA para agricultura de precisão
+spot spraying	1. IA para agricultura de precisão
+site-specific fertilization	1. IA para agricultura de precisão
+precision fertilization	1. IA para agricultura de precisão
+input reduction	1. IA para agricultura de precisão
+prescriptive map	1. IA para agricultura de precisão
+prescription map	1. IA para agricultura de precisão
+localized application	1. IA para agricultura de precisão
+weed detection	1. IA para agricultura de precisão
+pest detection	1. IA para agricultura de precisão
+disease detection	1. IA para agricultura de precisão
+pathogen	1. IA para agricultura de precisão
+infestation	1. IA para agricultura de precisão
+rust	1. IA para agricultura de precisão
+leaf spot	1. IA para agricultura de precisão
+phytosanitary	1. IA para agricultura de precisão
+crop disease	1. IA para agricultura de precisão
+plant disease	1. IA para agricultura de precisão
+pest classification	1. IA para agricultura de precisão
+weed identification	1. IA para agricultura de precisão
+plant pathology	1. IA para agricultura de precisão
+pest	1. IA para agricultura de precisão
+pests	1. IA para agricultura de precisão
+disease	1. IA para agricultura de precisão
+diseases	1. IA para agricultura de precisão
+weed	1. IA para agricultura de precisão
+weeds	1. IA para agricultura de precisão
+yield prediction	2. IA para previsão e tomada de decisão
+yield forecasting	2. IA para previsão e tomada de decisão
+production forecasting	2. IA para previsão e tomada de decisão
+yield estimation	2. IA para previsão e tomada de decisão
+biomass estimation	2. IA para previsão e tomada de decisão
+harvest prediction	2. IA para previsão e tomada de decisão
+crop yield forecasting	2. IA para previsão e tomada de decisão
+yield modelling	2. IA para previsão e tomada de decisão
+yield	2. IA para previsão e tomada de decisão
+weather forecasting	2. IA para previsão e tomada de decisão
+climate forecasting	2. IA para previsão e tomada de decisão
+frost prediction	2. IA para previsão e tomada de decisão
+drought forecasting	2. IA para previsão e tomada de decisão
+planting window	2. IA para previsão e tomada de decisão
+sowing date	2. IA para previsão e tomada de decisão
+spraying window	2. IA para previsão e tomada de decisão
+meteorological forecasting	2. IA para previsão e tomada de decisão
+rainfall prediction	2. IA para previsão e tomada de decisão
+risk analysis	2. IA para previsão e tomada de decisão
+risk assessment	2. IA para previsão e tomada de decisão
+crop failure risk	2. IA para previsão e tomada de decisão
+market risk	2. IA para previsão e tomada de decisão
+predictive modeling	2. IA para previsão e tomada de decisão
+financial risk	2. IA para previsão e tomada de decisão
+insurance risk	2. IA para previsão e tomada de decisão
+yield risk	2. IA para previsão e tomada de decisão
+smart irrigation	3. IA para irrigação e uso da água
+automated irrigation	3. IA para irrigação e uso da água
+irrigation scheduling	3. IA para irrigação e uso da água
+water saving	3. IA para irrigação e uso da água
+irrigation control	3. IA para irrigação e uso da água
+irrigation management	3. IA para irrigação e uso da água
+precision irrigation	3. IA para irrigação e uso da água
+irrigation	3. IA para irrigação e uso da água
+water stress	3. IA para irrigação e uso da água
+drought stress	3. IA para irrigação e uso da água
+crop water stress	3. IA para irrigação e uso da água
+soil moisture	3. IA para irrigação e uso da água
+evapotranspiration	3. IA para irrigação e uso da água
+moisture sensing	3. IA para irrigação e uso da água
+thermal imaging water	3. IA para irrigação e uso da água
+water deficit	3. IA para irrigação e uso da água
+pumping control	3. IA para irrigação e uso da água
+pump scheduling	3. IA para irrigação e uso da água
+reservoir management	3. IA para irrigação e uso da água
+water allocation	3. IA para irrigação e uso da água
+groundwater management	3. IA para irrigação e uso da água
+water pumping	3. IA para irrigação e uso da água
+livestock health	4. IA para pecuária de precisão
+cattle monitoring	4. IA para pecuária de precisão
+cow behavior	4. IA para pecuária de precisão
+accelerometer	4. IA para pecuária de precisão
+ruminant	4. IA para pecuária de precisão
+lameness	4. IA para pecuária de precisão
+mastitis	4. IA para pecuária de precisão
+ear tag	4. IA para pecuária de precisão
+smart collar	4. IA para pecuária de precisão
+body temperature animal	4. IA para pecuária de precisão
+animal health	4. IA para pecuária de precisão
+livestock behavior	4. IA para pecuária de precisão
+pig health	4. IA para pecuária de precisão
+livestock	4. IA para pecuária de precisão
+feed intake	4. IA para pecuária de precisão
+feed efficiency	4. IA para pecuária de precisão
+feeding behavior	4. IA para pecuária de precisão
+trough monitoring	4. IA para pecuária de precisão
+feed optimization	4. IA para pecuária de precisão
+diet formulation	4. IA para pecuária de precisão
+weight gain prediction	4. IA para pecuária de precisão
+pasture intake	4. IA para pecuária de precisão
+estrus detection	4. IA para pecuária de precisão
+heat detection	4. IA para pecuária de precisão
+calving prediction	4. IA para pecuária de precisão
+mounting behavior	4. IA para pecuária de precisão
+animal welfare	4. IA para pecuária de precisão
+thermal comfort animal	4. IA para pecuária de precisão
+animal stress	4. IA para pecuária de precisão
+cattle welfare	4. IA para pecuária de precisão
+pasture management	4. IA para pecuária de precisão
+pasture biomass	4. IA para pecuária de precisão
+grazing behavior	4. IA para pecuária de precisão
+overgrazing	4. IA para pecuária de precisão
+rotational grazing	4. IA para pecuária de precisão
+cattle herding	4. IA para pecuária de precisão
+swagbot	4. IA para pecuária de precisão
+stocking rate	4. IA para pecuária de precisão
+herding robot	4. IA para pecuária de precisão
+agro-sylvo-pastoral	4. IA para pecuária de precisão
+agro-silvo-pastoral	4. IA para pecuária de precisão
+giahs	4. IA para pecuária de precisão
+smart tractor	5. IA embarcada em máquinas, drones e robôs
+autonomous tractor	5. IA embarcada em máquinas, drones e robôs
+harvester automation	5. IA embarcada em máquinas, drones e robôs
+auto-guidance	5. IA embarcada em máquinas, drones e robôs
+autopilot	5. IA embarcada em máquinas, drones e robôs
+row detection	5. IA embarcada em máquinas, drones e robôs
+obstacle avoidance machinery	5. IA embarcada em máquinas, drones e robôs
+intelligent machinery	5. IA embarcada em máquinas, drones e robôs
+combine harvester	5. IA embarcada em máquinas, drones e robôs
+drone	5. IA embarcada em máquinas, drones e robôs
+uav	5. IA embarcada em máquinas, drones e robôs
+unmanned aerial vehicle	5. IA embarcada em máquinas, drones e robôs
+drone imagery	5. IA embarcada em máquinas, drones e robôs
+aerial mapping	5. IA embarcada em máquinas, drones e robôs
+fence inspection	5. IA embarcada em máquinas, drones e robôs
+plant counting drone	5. IA embarcada em máquinas, drones e robôs
+quadcopter agricultural	5. IA embarcada em máquinas, drones e robôs
+drones	5. IA embarcada em máquinas, drones e robôs
+uavs	5. IA embarcada em máquinas, drones e robôs
+robot	5. IA embarcada em máquinas, drones e robôs
+agribot	5. IA embarcada em máquinas, drones e robôs
+autonomous weeding	5. IA embarcada em máquinas, drones e robôs
+robotic weeding	5. IA embarcada em máquinas, drones e robôs
+selective harvesting	5. IA embarcada em máquinas, drones e robôs
+robotic harvesting	5. IA embarcada em máquinas, drones e robôs
+robotic picking	5. IA embarcada em máquinas, drones e robôs
+autonomous monitoring robot	5. IA embarcada em máquinas, drones e robôs
+field robot	5. IA embarcada em máquinas, drones e robôs
+robots	5. IA embarcada em máquinas, drones e robôs
+robotic	5. IA embarcada em máquinas, drones e robôs
+robotics	5. IA embarcada em máquinas, drones e robôs
+farm management information system	6. IA para gestão da propriedade rural
+fmis	6. IA para gestão da propriedade rural
+cost analysis farm	6. IA para gestão da propriedade rural
+production cost	6. IA para gestão da propriedade rural
+profitability farm	6. IA para gestão da propriedade rural
+margin forecasting	6. IA para gestão da propriedade rural
+expense tracking	6. IA para gestão da propriedade rural
+financial planning farm	6. IA para gestão da propriedade rural
+inventory control	6. IA para gestão da propriedade rural
+stock management	6. IA para gestão da propriedade rural
+seed inventory	6. IA para gestão da propriedade rural
+fertilizer stock	6. IA para gestão da propriedade rural
+fuel tracking	6. IA para gestão da propriedade rural
+demand forecasting input	6. IA para gestão da propriedade rural
+supply inventory	6. IA para gestão da propriedade rural
+operational planning	6. IA para gestão da propriedade rural
+scheduling tasks	6. IA para gestão da propriedade rural
+task assignment	6. IA para gestão da propriedade rural
+labor planning	6. IA para gestão da propriedade rural
+machinery scheduling	6. IA para gestão da propriedade rural
+operational efficiency farm	6. IA para gestão da propriedade rural
+workforce scheduling	6. IA para gestão da propriedade rural
+agricultural industrial complex	6. IA para gestão da propriedade rural
+agro-industrial complex	6. IA para gestão da propriedade rural
+digital transformation of agriculture	6. IA para gestão da propriedade rural
+chatbot	7. IA para assistência técnica e extensão rural
+virtual assistant	7. IA para assistência técnica e extensão rural
+conversational agent	7. IA para assistência técnica e extensão rural
+llm	7. IA para assistência técnica e extensão rural
+large language model	7. IA para assistência técnica e extensão rural
+chatgpt	7. IA para assistência técnica e extensão rural
+rag	7. IA para assistência técnica e extensão rural
+nlp	7. IA para assistência técnica e extensão rural
+extension service	7. IA para assistência técnica e extensão rural
+advisory system	7. IA para assistência técnica e extensão rural
+voice assistant	7. IA para assistência técnica e extensão rural
+agricultural chatbot	7. IA para assistência técnica e extensão rural
+question answering agricultural	7. IA para assistência técnica e extensão rural
+generative ai	7. IA para assistência técnica e extensão rural
+genai	7. IA para assistência técnica e extensão rural
+image diagnosis	7. IA para assistência técnica e extensão rural
+leaf diagnosis	7. IA para assistência técnica e extensão rural
+photo diagnosis	7. IA para assistência técnica e extensão rural
+mobile app diagnosis	7. IA para assistência técnica e extensão rural
+disease identification image	7. IA para assistência técnica e extensão rural
+pest identification image	7. IA para assistência técnica e extensão rural
+leaf symptom diagnosis	7. IA para assistência técnica e extensão rural
+expert system	7. IA para assistência técnica e extensão rural
+decision support system	7. IA para assistência técnica e extensão rural
+recommendation engine	7. IA para assistência técnica e extensão rural
+personalized advice	7. IA para assistência técnica e extensão rural
+soil analysis recommendation	7. IA para assistência técnica e extensão rural
+fertilization recommendation	7. IA para assistência técnica e extensão rural
+technology adoption among farmers	7. IA para assistência técnica e extensão rural
+adoption of artificial intelligence	7. IA para assistência técnica e extensão rural
+price forecasting	8. IA para comercialização e mercado
+market demand	8. IA para comercialização e mercado
+price trend	8. IA para comercialização e mercado
+market analysis	8. IA para comercialização e mercado
+commodity price	8. IA para comercialização e mercado
+sales forecasting	8. IA para comercialização e mercado
+agricultural price forecasting	8. IA para comercialização e mercado
+sorting	8. IA para comercialização e mercado
+grading	8. IA para comercialização e mercado
+quality classification	8. IA para comercialização e mercado
+fruit grading	8. IA para comercialização e mercado
+grain classification	8. IA para comercialização e mercado
+meat quality	8. IA para comercialização e mercado
+defect detection	8. IA para comercialização e mercado
+color sorting	8. IA para comercialização e mercado
+product classification	8. IA para comercialização e mercado
+grain sorting	8. IA para comercialização e mercado
+traceability	8. IA para comercialização e mercado
+supply chain	8. IA para comercialização e mercado
+blockchain	8. IA para comercialização e mercado
+logistics	8. IA para comercialização e mercado
+cold chain	8. IA para comercialização e mercado
+provenance	8. IA para comercialização e mercado
+origin verification	8. IA para comercialização e mercado
+food supply chain	8. IA para comercialização e mercado
+silo monitoring	9. IA para pós-colheita, armazenamento e agroindústria
+grain storage	9. IA para pós-colheita, armazenamento e agroindústria
+temperature control silo	9. IA para pós-colheita, armazenamento e agroindústria
+humidity control silo	9. IA para pós-colheita, armazenamento e agroindústria
+spoilage detection	9. IA para pós-colheita, armazenamento e agroindústria
+fungi risk	9. IA para pós-colheita, armazenamento e agroindústria
+mycotoxin prevention	9. IA para pós-colheita, armazenamento e agroindústria
+aeration control silo	9. IA para pós-colheita, armazenamento e agroindústria
+silo temperature	9. IA para pós-colheita, armazenamento e agroindústria
+quality control	9. IA para pós-colheita, armazenamento e agroindústria
+shelf life prediction	9. IA para pós-colheita, armazenamento e agroindústria
+ripeness estimation	9. IA para pós-colheita, armazenamento e agroindústria
+contamination detection	9. IA para pós-colheita, armazenamento e agroindústria
+impurity detection	9. IA para pós-colheita, armazenamento e agroindústria
+postharvest quality	9. IA para pós-colheita, armazenamento e agroindústria
+loss prediction	9. IA para pós-colheita, armazenamento e agroindústria
+waste reduction	9. IA para pós-colheita, armazenamento e agroindústria
+post-harvest loss	9. IA para pós-colheita, armazenamento e agroindústria
+spoilage prediction	9. IA para pós-colheita, armazenamento e agroindústria
+decay forecasting	9. IA para pós-colheita, armazenamento e agroindústria
+post-harvest waste	9. IA para pós-colheita, armazenamento e agroindústria
+deforestation	10. IA para sustentabilidade e conformidade ambiental
+land cover change	10. IA para sustentabilidade e conformidade ambiental
+soil erosion	10. IA para sustentabilidade e conformidade ambiental
+preservation area	10. IA para sustentabilidade e conformidade ambiental
+biodiversity monitoring	10. IA para sustentabilidade e conformidade ambiental
+habitat mapping	10. IA para sustentabilidade e conformidade ambiental
+degradation map	10. IA para sustentabilidade e conformidade ambiental
+forest monitoring	10. IA para sustentabilidade e conformidade ambiental
+eco-efficiency	10. IA para sustentabilidade e conformidade ambiental
+input conservation	10. IA para sustentabilidade e conformidade ambiental
+resource efficiency	10. IA para sustentabilidade e conformidade ambiental
+precision conservation	10. IA para sustentabilidade e conformidade ambiental
+input reduction sustainability	10. IA para sustentabilidade e conformidade ambiental
+efficient resource use	10. IA para sustentabilidade e conformidade ambiental
+agricultural energy internet	10. IA para sustentabilidade e conformidade ambiental
+aei	10. IA para sustentabilidade e conformidade ambiental
+carbon sequestration	10. IA para sustentabilidade e conformidade ambiental
+carbon footprint	10. IA para sustentabilidade e conformidade ambiental
+ghg emissions	10. IA para sustentabilidade e conformidade ambiental
+soil organic carbon	10. IA para sustentabilidade e conformidade ambiental
+sustainable agriculture	10. IA para sustentabilidade e conformidade ambiental
+regenerative agriculture	10. IA para sustentabilidade e conformidade ambiental
+agroecology	10. IA para sustentabilidade e conformidade ambiental
+soil carbon	10. IA para sustentabilidade e conformidade ambiental
+climate smart agriculture	10. IA para sustentabilidade e conformidade ambiental
+csa	10. IA para sustentabilidade e conformidade ambiental

@@ -1,37 +1,23 @@
 <?php
-
 /**
- * Gera arquivos para o Gephi a partir de:
- *
- * - vosviewer-categorias.txt
- *
- * Saídas:
- *
- * - gephi-categorias-nodes.csv
- * - gephi-categorias-edges.csv
- *
- * Como importar no Gephi:
- * 1. Data Laboratory
- * 2. Import Spreadsheet
- * 3. Importar primeiro nodes.csv como Nodes table
- * 4. Importar depois edges.csv como Edges table
+ * gerar-gephi-categorias.php
+ * 
+ * Gera arquivos para o Gephi a partir do arquivo intermediário.
+ * Caminhos adaptados para a estrutura de pastas organizada.
  */
 
-$baseDir = __DIR__;
+$arquivoEntrada = __DIR__ . '/../redes_vosviewer/vosviewer-categorias.txt';
 
-$arquivoEntrada = $baseDir . '/vosviewer-categorias.txt';
-
-$arquivoNodes = $baseDir . '/gephi-categorias-nodes.csv';
-$arquivoEdges = $baseDir . '/gephi-categorias-edges.csv';
+$arquivoNodes = __DIR__ . '/../redes_gephi/gephi-categorias-nodes.csv';
+$arquivoEdges = __DIR__ . '/../redes_gephi/gephi-categorias-edges.csv';
 
 if (!file_exists($arquivoEntrada)) {
-    die("Erro: arquivo vosviewer-categorias.txt não encontrado. Rode primeiro: php gerar-vosviewer-categorias.php" . PHP_EOL);
+    die("Erro: arquivo '$arquivoEntrada' não encontrado. Execute primeiro 'classifica.php'.\n");
 }
 
 $handle = fopen($arquivoEntrada, 'r');
-
 if (!$handle) {
-    die("Erro: não foi possível abrir vosviewer-categorias.txt" . PHP_EOL);
+    die("Erro: não foi possível abrir vosviewer-categorias.txt\n");
 }
 
 $categorias = [];
@@ -49,7 +35,6 @@ while (($linha = fgets($handle)) !== false) {
 
     if ($primeiraLinha) {
         $primeiraLinha = false;
-
         if (mb_strtolower($linha) === 'label') {
             continue;
         }
@@ -69,7 +54,6 @@ while (($linha = fgets($handle)) !== false) {
             $categorias[$categoria] = count($categorias) + 1;
             $ocorrencias[$categoria] = 0;
         }
-
         $ocorrencias[$categoria]++;
     }
 
@@ -104,13 +88,9 @@ while (($linha = fgets($handle)) !== false) {
 
 fclose($handle);
 
-/**
- * Gera nodes.csv
- */
 $fpNodes = fopen($arquivoNodes, 'w');
-
 if (!$fpNodes) {
-    die("Erro: não foi possível criar gephi-categorias-nodes.csv" . PHP_EOL);
+    die("Erro: não foi possível criar gephi-categorias-nodes.csv\n");
 }
 
 fwrite($fpNodes, "Id;Label;Weight" . PHP_EOL);
@@ -125,13 +105,9 @@ foreach ($categorias as $categoria => $id) {
 
 fclose($fpNodes);
 
-/**
- * Gera edges.csv
- */
 $fpEdges = fopen($arquivoEdges, 'w');
-
 if (!$fpEdges) {
-    die("Erro: não foi possível criar gephi-categorias-edges.csv" . PHP_EOL);
+    die("Erro: não foi possível criar gephi-categorias-edges.csv\n");
 }
 
 fwrite($fpEdges, "Source;Target;Weight;Type" . PHP_EOL);
@@ -147,22 +123,19 @@ foreach ($coocorrencias as $aresta) {
 
 fclose($fpEdges);
 
-echo "Arquivos para Gephi gerados com sucesso:" . PHP_EOL;
-echo "- {$arquivoNodes}" . PHP_EOL;
-echo "- {$arquivoEdges}" . PHP_EOL;
-echo PHP_EOL;
-echo "Categorias: " . count($categorias) . PHP_EOL;
-echo "Relações: " . count($coocorrencias) . PHP_EOL;
+echo "Arquivos para Gephi gerados com sucesso:\n";
+echo "- {$arquivoNodes}\n";
+echo "- {$arquivoEdges}\n";
+echo "\nCategorias: " . count($categorias) . "\n";
+echo "Relações: " . count($coocorrencias) . "\n";
 
 function csvLinha(array $valores): string
 {
     $tratados = [];
-
     foreach ($valores as $valor) {
         $valor = (string) $valor;
         $valor = str_replace('"', '""', $valor);
         $tratados[] = '"' . $valor . '"';
     }
-
     return implode(';', $tratados);
 }

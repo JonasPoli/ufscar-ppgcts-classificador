@@ -62411,7 +62411,8 @@ UT WOS:001707758400001
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT C
 AU Taiwo, GA
@@ -128444,7 +128445,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Chen, Z
@@ -197145,7 +197147,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Caliskan, A
@@ -262581,7 +262584,8 @@ UT WOS:001706379900087
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT C
 AU Meharaj-Ul-Mahmmud
@@ -327846,7 +327850,8 @@ UT WOS:001729239300001
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Xu, TY
@@ -390830,7 +390835,8 @@ UT WOS:001536831400001
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Dainelli, R
@@ -459555,7 +459561,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT C
 AU Biswas, R
@@ -525402,7 +525409,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Wang, XD
@@ -589583,7 +589591,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Neupane, J
@@ -655860,7 +655869,8 @@ UT WOS:000864021800006
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Spencer, NR
@@ -717601,7 +717611,8 @@ PM 33779956
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Li, X
@@ -782554,7 +782565,8 @@ UT WOS:000664335304125
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Hassoun, A
@@ -845699,7 +845711,8 @@ UT WOS:A1992GX27600013
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT C
 AU Roopashree, S
@@ -913017,7 +913030,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Richter, DJ
@@ -975879,7 +975893,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Nascimento, APS
@@ -1040889,7 +1040904,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Sung, WT
@@ -1102091,7 +1102107,8 @@ OA Green Submitted, hybrid
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Maksimovic, J
@@ -1164632,7 +1164649,8 @@ OA Green Submitted, gold
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU Ferreira, CSS
@@ -1223535,7 +1223553,8 @@ UT WOS:000996116800001
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT J
 AU López-Andrés, JJ
@@ -1287587,7 +1287606,8 @@ UT WOS:000830068700010
 DA 2026-04-18
 ER
 
-EF﻿FN Clarivate Analytics Web of Science
+EF
+﻿FN Clarivate Analytics Web of Science
 VR 1.0
 PT C
 AU Matowo, PR
