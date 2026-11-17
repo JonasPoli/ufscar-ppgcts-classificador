@@ -1,32 +1,32 @@
 id	label	weight	cluster
-1	1.1. Monitoramento da lavoura	2335	1
-2	1.2. Aplicação localizada de insumos	73	1
-3	1.3. Detecção de plantas daninhas, pragas e doenças	2700	1
-4	2.1. Previsão de produtividade	1723	2
-5	2.2. Previsão climática aplicada ao manejo	89	2
-6	2.3. Análise de risco	231	2
-7	3.1. Irrigação inteligente	625	3
-8	3.2. Detecção de estresse hídrico	389	3
-9	3.3. Gestão de reservatórios e bombeamento	32	3
-10	4.1. Monitoramento da saúde animal	527	4
+1	1.1. Monitoramento da lavoura	2273	1
+2	1.2. Aplicação localizada de insumos	67	1
+3	1.3. Detecção de plantas daninhas, pragas e doenças	2206	1
+4	2.1. Previsão de produtividade	1627	2
+5	2.2. Previsão climática aplicada ao manejo	80	2
+6	2.3. Análise de risco	197	2
+7	3.1. Irrigação inteligente	583	3
+8	3.2. Detecção de estresse hídrico	357	3
+9	3.3. Gestão de reservatórios e bombeamento	26	3
+10	4.1. Monitoramento da saúde animal	506	4
 11	4.2. Manejo alimentar	45	4
-12	4.3. Reprodução e bem-estar	189	4
+12	4.3. Reprodução e bem-estar	179	4
 13	4.4. Manejo de pastagens	21	4
-14	5.1. Máquinas agrícolas inteligentes	24	5
-15	5.2. Drones com IA	679	5
-16	5.3. Robôs agrícolas	857	5
-17	6.1. Gestão financeira e custos de produção	64	6
-18	6.2. Controle de estoque e insumos	53	6
-19	6.3. Planejamento operacional	23	6
-20	7.1. Assistentes virtuais agrícolas	2795	7
+14	5.1. Máquinas agrícolas inteligentes	23	5
+15	5.2. Drones com IA	647	5
+16	5.3. Robôs agrícolas	827	5
+17	6.1. Gestão financeira e custos de produção	62	6
+18	6.2. Controle de estoque e insumos	3	6
+19	6.3. Planejamento operacional	21	6
+20	7.1. Assistentes virtuais agrícolas	754	7
 21	7.2. Diagnóstico por imagem	3	7
-22	7.3. Recomendação técnica personalizada	263	7
-23	8.1. Previsão de preços e demanda	52	8
-24	8.2. Classificação de produtos	224	8
-25	8.3. Rastreabilidade e cadeia produtiva	696	8
-26	9.1. Monitoramento de armazenamento	11	9
+22	7.3. Recomendação técnica personalizada	254	7
+23	8.1. Previsão de preços e demanda	49	8
+24	8.2. Classificação de produtos	177	8
+25	8.3. Rastreabilidade e cadeia produtiva	669	8
+26	9.1. Monitoramento de armazenamento	10	9
 27	9.2. Controle de qualidade	96	9
 28	9.3. Previsão de perdas	57	9
-29	10.1. Monitoramento ambiental	61	10
-30	10.2. Uso eficiente de insumos	99	10
-31	10.3. Carbono e sustentabilidade	604	10
+29	10.1. Monitoramento ambiental	58	10
+30	10.2. Uso eficiente de insumos	90	10
+31	10.3. Carbono e sustentabilidade	580	10

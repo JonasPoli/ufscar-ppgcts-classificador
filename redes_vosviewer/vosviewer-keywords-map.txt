@@ -1,30 +1,30 @@
 id	label	weight	cluster
 1	crop monitoring	128	1
-2	crop growth	124	1
-3	ndvi	89	1
+2	crop growth	118	1
+3	ndvi	86	1
 4	vegetation index	132	1
 5	vegetation indices	94	1
-6	vigor	26	1
-7	canopy	107	1
+6	vigor	24	1
+7	canopy	105	1
 8	gap detection	1	1
 9	crop status	5	1
 10	plant status	3	1
-11	field monitoring	22	1
+11	field monitoring	21	1
 12	crop canopy	5	1
 13	smart farm	437	1
 14	smart farming	386	1
-15	precision farming	217	1
+15	precision farming	216	1
 16	agriculture 4.0	114	1
 17	farming 4.0	2	1
-18	ai in agriculture	98	1
+18	ai in agriculture	96	1
 19	artificial intelligence in agriculture	103	1
 20	agricultural applications of artificial intelligence	1	1
-21	smart agriculture	609	1
-22	smart agricultural	66	1
-23	computer vision	703	1
+21	smart agriculture	608	1
+22	smart agricultural	65	1
+23	computer vision	702	1
 24	variable rate	28	1
-25	vra	6	1
-26	fertilizer application	23	1
+25	vra	2	1
+26	fertilizer application	22	1
 27	spot spraying	10	1
 28	precision fertilization	8	1
 29	prescription map	4	1
@@ -32,40 +32,40 @@ id	label	weight	cluster
 31	weed detection	124	1
 32	pest detection	91	1
 33	disease detection	559	1
-34	pathogen	227	1
-35	infestation	94	1
-36	rust	343	1
-37	leaf spot	32	1
-38	phytosanitary	15	1
+34	pathogen	211	1
+35	infestation	83	1
+36	rust	67	1
+37	leaf spot	30	1
+38	phytosanitary	13	1
 39	crop disease	179	1
-40	plant disease	414	1
+40	plant disease	413	1
 41	pest classification	10	1
-42	weed identification	31	1
-43	plant pathology	29	1
-44	pest	842	1
-45	pests	312	1
-46	disease	1562	1
-47	diseases	934	1
-48	weed	386	1
-49	weeds	204	1
+42	weed identification	30	1
+43	plant pathology	28	1
+44	pest	749	1
+45	pests	300	1
+46	disease	1537	1
+47	diseases	922	1
+48	weed	338	1
+49	weeds	170	1
 50	yield prediction	227	2
 51	yield forecasting	43	2
-52	production forecasting	6	2
+52	production forecasting	5	2
 53	yield estimation	83	2
 54	biomass estimation	17	2
 55	harvest prediction	2	2
 56	crop yield forecasting	11	2
 57	yield modelling	1	2
-58	yield	1672	2
+58	yield	1615	2
 59	weather forecasting	33	2
-60	climate forecasting	9	2
+60	climate forecasting	8	2
 61	frost prediction	1	2
 62	drought forecasting	23	2
 63	sowing date	3	2
 64	meteorological forecasting	4	2
 65	rainfall prediction	14	2
 66	risk analysis	8	2
-67	risk assessment	115	2
+67	risk assessment	96	2
 68	crop failure risk	1	2
 69	market risk	2	2
 70	predictive modeling	87	2
@@ -73,45 +73,45 @@ id	label	weight	cluster
 72	insurance risk	2	2
 73	smart irrigation	73	3
 74	automated irrigation	19	3
-75	irrigation scheduling	55	3
-76	water saving	27	3
+75	irrigation scheduling	54	3
+76	water saving	25	3
 77	irrigation control	11	3
 78	irrigation management	63	3
 79	precision irrigation	39	3
-80	irrigation	585	3
+80	irrigation	579	3
 81	water stress	51	3
 82	drought stress	30	3
 83	crop water stress	9	3
-84	soil moisture	174	3
-85	evapotranspiration	137	3
+84	soil moisture	172	3
+85	evapotranspiration	136	3
 86	moisture sensing	4	3
 87	water deficit	12	3
 88	reservoir management	2	3
 89	water allocation	11	3
 90	groundwater management	12	3
-91	water pumping	2	3
+91	water pumping	1	3
 92	livestock health	16	4
 93	cattle monitoring	7	4
 94	cow behavior	4	4
 95	accelerometer	30	4
-96	ruminant	26	4
-97	lameness	37	4
-98	mastitis	43	4
+96	ruminant	25	4
+97	lameness	36	4
+98	mastitis	42	4
 99	ear tag	5	4
 100	smart collar	1	4
-101	animal health	76	4
+101	animal health	75	4
 102	livestock behavior	5	4
 103	pig health	5	4
-104	livestock	427	4
+104	livestock	418	4
 105	feed intake	16	4
 106	feed efficiency	15	4
 107	feeding behavior	11	4
 108	feed optimization	8	4
 109	diet formulation	2	4
-110	estrus detection	16	4
-111	heat detection	6	4
+110	estrus detection	14	4
+111	heat detection	2	4
 112	mounting behavior	1	4
-113	animal welfare	164	4
+113	animal welfare	162	4
 114	animal stress	8	4
 115	cattle welfare	3	4
 116	pasture management	9	4
@@ -124,53 +124,53 @@ id	label	weight	cluster
 123	autonomous tractor	2	5
 124	harvester automation	1	5
 125	autopilot	2	5
-126	row detection	9	5
+126	row detection	8	5
 127	intelligent machinery	2	5
 128	combine harvester	8	5
 129	drone	337	5
-130	uav	386	5
+130	uav	373	5
 131	unmanned aerial vehicle	304	5
 132	drone imagery	18	5
 133	aerial mapping	1	5
 134	drones	242	5
-135	uavs	209	5
-136	robot	833	5
+135	uavs	208	5
+136	robot	826	5
 137	agribot	4	5
 138	autonomous weeding	3	5
 139	robotic weeding	6	5
 140	selective harvesting	4	5
 141	robotic harvesting	9	5
 142	robotic picking	2	5
-143	field robot	17	5
-144	robots	334	5
-145	robotic	597	5
-146	robotics	449	5
+143	field robot	16	5
+144	robots	330	5
+145	robotic	594	5
+146	robotics	446	5
 147	farm management information system	6	6
 148	fmis	5	6
 149	production cost	55	6
 150	inventory control	1	6
-151	stock management	51	6
+151	stock management	2	6
 152	operational planning	1	6
 153	task assignment	4	6
 154	machinery scheduling	2	6
 155	agricultural industrial complex	1	6
-156	agro-industrial complex	8	6
+156	agro-industrial complex	7	6
 157	digital transformation of agriculture	7	6
 158	chatbot	119	7
 159	virtual assistant	10	7
 160	conversational agent	22	7
-161	llm	325	7
-162	large language model	349	7
-163	chatgpt	131	7
-164	rag	2062	7
-165	nlp	53	7
-166	extension service	24	7
+161	llm	267	7
+162	large language model	348	7
+163	chatgpt	119	7
+164	rag	96	7
+165	nlp	52	7
+166	extension service	21	7
 167	advisory system	14	7
 168	voice assistant	5	7
 169	agricultural chatbot	3	7
 170	question answering agricultural	2	7
-171	generative ai	126	7
-172	genai	34	7
+171	generative ai	124	7
+172	genai	32	7
 173	leaf diagnosis	3	7
 174	expert system	70	7
 175	decision support system	161	7
@@ -184,22 +184,22 @@ id	label	weight	cluster
 183	commodity price	12	8
 184	sales forecasting	1	8
 185	agricultural price forecasting	4	8
-186	sorting	88	8
-187	grading	94	8
+186	sorting	86	8
+187	grading	62	8
 188	quality classification	20	8
 189	fruit grading	4	8
 190	grain classification	6	8
-191	meat quality	10	8
+191	meat quality	9	8
 192	defect detection	14	8
 193	product classification	5	8
 194	traceability	162	8
 195	supply chain	373	8
 196	blockchain	318	8
-197	logistics	125	8
+197	logistics	124	8
 198	cold chain	13	8
 199	provenance	5	8
-200	food supply chain	106	8
-201	grain storage	6	9
+200	food supply chain	104	8
+201	grain storage	5	9
 202	spoilage detection	5	9
 203	quality control	91	9
 204	shelf life prediction	2	9
@@ -213,23 +213,23 @@ id	label	weight	cluster
 212	spoilage prediction	1	9
 213	deforestation	24	10
 214	land cover change	6	10
-215	soil erosion	21	10
+215	soil erosion	20	10
 216	preservation area	1	10
 217	biodiversity monitoring	9	10
 218	forest monitoring	1	10
 219	eco-efficiency	1	10
 220	resource efficiency	77	10
 221	precision conservation	2	10
-222	efficient resource use	8	10
+222	efficient resource use	7	10
 223	agricultural energy internet	2	10
-224	aei	8	10
+224	aei	2	10
 225	carbon sequestration	34	10
-226	carbon footprint	41	10
-227	ghg emissions	16	10
-228	soil organic carbon	27	10
-229	sustainable agriculture	449	10
+226	carbon footprint	40	10
+227	ghg emissions	15	10
+228	soil organic carbon	26	10
+229	sustainable agriculture	446	10
 230	regenerative agriculture	16	10
 231	agroecology	11	10
 232	soil carbon	19	10
 233	climate smart agriculture	4	10
-234	csa	17	10
+234	csa	12	10

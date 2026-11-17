@@ -4,7 +4,7 @@
  * 
  * Script para ler resultados/artigos_classificados.csv, agrupar por subcategoria,
  * ordenar os artigos pelo número de citações (coluna TC - Times Cited) em ordem decrescente,
- * e extrair os 3 artigos mais citados de cada uma das 29 subcategorias.
+ * e extrair os 3 artigos mais citados de cada subcategoria com registros classificados.
  * 
  * Gera saídas em CSV e Markdown para fácil incorporação na dissertação.
  * Jonas Ernesto Poli - Mestrado PPGCTS / UFSCar

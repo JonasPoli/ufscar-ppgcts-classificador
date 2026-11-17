@@ -2,11 +2,12 @@
 /**
  * config_categorias.php
  * Arquivo de configuração compartilhado contendo a definição unificada das
- * categorias, subcategorias, validadores de IA/Agro e filtros de ruído.
+ * categorias, subcategorias, validadores de IA/Agro e filtros de ruído, além das
+ * funções de correspondência de termos, triagem e pontuação usadas por todos os programas.
  */
 
 // -----------------------------------------------------------------------------------------
-// 1. DICIONÁRIO DE 10 CATEGORIAS E 29 SUBCATEGORIAS SOCIOTÉCNICAS
+// 1. DICIONÁRIO DE 10 CATEGORIAS E 31 SUBCATEGORIAS SOCIOTÉCNICAS
 // -----------------------------------------------------------------------------------------
 $categoriasNovas = [
     "1. IA para agricultura de precisão" => [
@@ -136,3 +137,157 @@ $ruidosTermos = [
         'photovoltaic systems', 'solar photovoltaic', 'solar wind hybrid', 'vertical-axis wind' // Engenharia de energia limpa não ligada a agro
     ]
 ];
+
+// -----------------------------------------------------------------------------------------
+// 4. REGRA DE CORRESPONDÊNCIA DOS TERMOS (a mesma em todos os programas)
+// -----------------------------------------------------------------------------------------
+// Os termos são procurados a partir do início das palavras: "crop" encontra "crops" e
+// "cropland", mas não "outcrop". As siglas curtas (até 3 caracteres, como rag, llm e uav)
+// valem apenas como palavra inteira, admitido o plural em "s" ("llms", "uavs"), para evitar
+// correspondências espúrias, como a de "rag" dentro de "average" ou "storage".
+const TAMANHO_MAXIMO_SIGLA_CURTA = 3;
+
+function regexDoTermo(string $termo): string
+{
+    static $cache = [];
+    if (!isset($cache[$termo])) {
+        $t = strtolower($termo);
+        $siglaCurta = strlen($t) <= TAMANHO_MAXIMO_SIGLA_CURTA && strpos($t, ' ') === false;
+        $inicio = preg_match('/^\w/', $t) ? '\b' : '';
+        $fim = $siglaCurta ? 's?\b' : '';
+        $cache[$termo] = '/' . $inicio . preg_quote($t, '/') . $fim . '/';
+    }
+    return $cache[$termo];
+}
+
+// Indica se o termo aparece no texto (o texto deve estar em minúsculas)
+function contemTermo(string $textoMinusculo, string $termo): bool
+{
+    return preg_match(regexDoTermo($termo), $textoMinusculo) === 1;
+}
+
+// Conta as ocorrências do termo no texto (o texto deve estar em minúsculas)
+function contarTermo(string $textoMinusculo, string $termo): int
+{
+    return (int) preg_match_all(regexDoTermo($termo), $textoMinusculo);
+}
+
+// -----------------------------------------------------------------------------------------
+// 5. LEITURA, TRIAGEM E PONTUAÇÃO DE UM REGISTRO DA WoS
+// -----------------------------------------------------------------------------------------
+const ANO_MINIMO = 2000;
+
+// Converte um bloco de texto da WoS em um array [marcador => valor]
+function lerCamposWoS(string $bloco): array
+{
+    $campos = [];
+    $tagAtual = "";
+    foreach (explode("\n", $bloco) as $linha) {
+        if (strlen($linha) < 3) continue;
+
+        $tag = substr($linha, 0, 2);
+        $val = trim(substr($linha, 3));
+
+        if ($tag !== "  ") {
+            $tagAtual = $tag;
+            $campos[$tagAtual] = $val;
+        } else {
+            $campos[$tagAtual] = ($campos[$tagAtual] ?? "") . " " . $val;
+        }
+    }
+    return $campos;
+}
+
+// Blocos sem identificador nem título (como o marcador "EF" de fim de arquivo) não são registros
+function ehRegistroWoS(array $campos): bool
+{
+    return isset($campos["UT"]) || isset($campos["TI"]);
+}
+
+// Texto único de busca: título, palavras-chave dos autores, Keywords Plus e resumo
+function textoTotalDoRegistro(array $campos): string
+{
+    return strtolower(
+        ($campos["TI"] ?? "") . " " .
+        ($campos["DE"] ?? "") . " " .
+        ($campos["ID"] ?? "") . " " .
+        ($campos["AB"] ?? "")
+    );
+}
+
+// Triagem em três etapas. Devolve null quando o registro é aprovado ou
+// ['etapa' => ..., 'motivo' => ...] quando é descartado como ruído.
+function triarRegistro(array $campos): ?array
+{
+    global $ruidosTermos, $validadoresIA, $validadoresAgro;
+
+    // Etapa 1a: filtro temporal
+    $anoPY = (int)($campos["PY"] ?? 0);
+    if ($anoPY > 0 && $anoPY < ANO_MINIMO) {
+        return ['etapa' => 'Anterior a ' . ANO_MINIMO, 'motivo' => "Ano de publicacao anterior a " . ANO_MINIMO . " ($anoPY)"];
+    }
+
+    // Etapa 1b: retratações
+    $titulo = strtolower($campos["TI"] ?? "");
+    if (strpos($titulo, "retracted") !== false || strpos($titulo, "retraction") !== false) {
+        return ['etapa' => 'Retratado', 'motivo' => "Artigo retratado (Retracted / Retraction)"];
+    }
+
+    // Etapa 2: dicionário de ruídos
+    $textoTotal = textoTotalDoRegistro($campos);
+    foreach ($ruidosTermos as $grupo => $termos) {
+        foreach ($termos as $termRuido) {
+            if (contemTermo($textoTotal, $termRuido)) {
+                return ['etapa' => "Ruido: $grupo", 'motivo' => "Termo de ruido detectado no grupo '$grupo': '$termRuido'"];
+            }
+        }
+    }
+
+    // Etapa 3: validação dupla (IA e domínio agrícola)
+    $ehIA = false;
+    foreach ($validadoresIA as $v) {
+        if (contemTermo($textoTotal, $v)) { $ehIA = true; break; }
+    }
+    if (!$ehIA) {
+        return ['etapa' => 'Sem termos de IA', 'motivo' => "Ausencia de termos validadores de Inteligencia Artificial"];
+    }
+
+    $ehAgro = false;
+    foreach ($validadoresAgro as $a) {
+        if (contemTermo($textoTotal, $a)) { $ehAgro = true; break; }
+    }
+    if (!$ehAgro) {
+        return ['etapa' => 'Sem termos do dominio agricola', 'motivo' => "Ausencia de termos validadores do dominio agricola/rural"];
+    }
+
+    return null;
+}
+
+// Pontuação ponderada: título (3), palavras-chave dos autores e Keywords Plus (2), resumo (1).
+// Devolve apenas as subcategorias que pontuaram: [subcategoria => ['score' => n, 'main' => categoria]]
+function pontuarSubcategorias(array $campos): array
+{
+    global $categoriasNovas;
+
+    $ti = strtolower($campos["TI"] ?? "");
+    $de = strtolower($campos["DE"] ?? "");
+    $id = strtolower($campos["ID"] ?? "");
+    $ab = strtolower($campos["AB"] ?? "");
+
+    $subScores = [];
+    foreach ($categoriasNovas as $mainCat => $subs) {
+        foreach ($subs as $subCat => $keywords) {
+            $score = 0;
+            foreach ($keywords as $w) {
+                $score += contarTermo($ti, $w) * 3;
+                $score += contarTermo($de, $w) * 2;
+                $score += contarTermo($id, $w) * 2;
+                $score += contarTermo($ab, $w) * 1;
+            }
+            if ($score > 0) {
+                $subScores[$subCat] = ['score' => $score, 'main' => $mainCat];
+            }
+        }
+    }
+    return $subScores;
+}

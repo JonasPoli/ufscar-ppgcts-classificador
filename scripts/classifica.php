@@ -1,10 +1,13 @@
 <?php
 /**
- * classifica.php - VERSÃO 13.2 (ESTÁVEL / CLASSIFICAÇÃO BINÁRIA)
+ * classifica.php - VERSÃO 14.0 (VERSÃO FINAL DA DISSERTAÇÃO / CLASSIFICAÇÃO BINÁRIA)
  * Jonas Ernesto Poli - Mestrado PPGCTS / UFSCar
  * 
  * Este script realiza a classificação binária de todos os artigos da base:
  * ou eles são "Classificados" sob uma das subcategorias, ou são marcados como "Ruído".
+ *
+ * As regras de triagem, de correspondência dos termos e de pontuação ficam em
+ * config_categorias.php, para que todos os programas apliquem os mesmos critérios.
  * 
  * Caminhos de entrada e saída adaptados para a estrutura de pastas organizada.
  */
@@ -48,6 +51,7 @@ $estatisticas = [
     'Validos_Classificados' => 0,
     'Validos_Pendentes' => 0,
     'Ruidos' => 0,
+    'Etapas' => [],
     'Motivos_Descarte' => []
 ];
 
@@ -56,99 +60,27 @@ $estatisticas = [
 // -----------------------------------------------------------------------------------------
 foreach ($artigos as $bloco) {
     if (trim($bloco) === "") continue;
+
+    $campos = lerCamposWoS($bloco);
+    if (!ehRegistroWoS($campos)) continue; // ignora o marcador "EF" de fim de arquivo
     $totalLidos++;
 
-    $campos = [];
-    $linhas = explode("\n", $bloco);
-    $tagAtual = "";
-    
-    foreach ($linhas as $linha) {
-        if (strlen($linha) < 3) continue;
-        
-        $tag = substr($linha, 0, 2);
-        $val = trim(substr($linha, 3));
-        
-        if ($tag !== "  ") {
-            $tagAtual = $tag;
-            $campos[$tagAtual] = $val;
-        } else {
-            $campos[$tagAtual] = ($campos[$tagAtual] ?? "") . " " . $val;
-        }
-    }
-
     $ut = $campos["UT"] ?? "S_UT_" . $totalLidos;
-    $textoTotal = strtolower(
-        ($campos["TI"] ?? "") . " " . 
-        ($campos["DE"] ?? "") . " " . 
-        ($campos["ID"] ?? "") . " " . 
-        ($campos["AB"] ?? "")
-    );
-    
+
+    // -------------------------------------------------------------------------------------
+    // 5.1 FILTRAGEM DE RUÍDO (MULTI-ESTÁGIO) - regras em config_categorias.php
+    // -------------------------------------------------------------------------------------
     $status = "Valido";
     $motivoDescarte = "";
+    $etapaDescarte = "";
 
-    // -------------------------------------------------------------------------------------
-    // 5.1 FILTRAGEM DE RUÍDO (MULTI-ESTÁGIO)
-    // -------------------------------------------------------------------------------------
-    // a. Filtro Temporal (Ano >= 2000)
-    $ANO_MINIMO = 2000;
-    $anoPY = (int)($campos["PY"] ?? 0);
-    if ($anoPY > 0 && $anoPY < $ANO_MINIMO) {
+    $descarte = triarRegistro($campos);
+    if ($descarte !== null) {
         $status = "Ruido";
-        $motivoDescarte = "Ano de publicacao anterior a 2000 ($anoPY)";
+        $motivoDescarte = $descarte['motivo'];
+        $etapaDescarte = $descarte['etapa'];
     }
 
-    // b. Filtro de Retratação
-    if ($status === "Valido") {
-        $title = strtolower($campos["TI"] ?? "");
-        if (strpos($title, "retracted") !== false || strpos($title, "retraction") !== false) {
-            $status = "Ruido";
-            $motivoDescarte = "Artigo retratado (Retracted / Retraction)";
-        }
-    }
-
-    // c. Filtro de Termos Nocivos (Noise Dictionary)
-    if ($status === "Valido") {
-        foreach ($ruidosTermos as $grupo => $termos) {
-            foreach ($termos as $termRuido) {
-                if (strpos($textoTotal, $termRuido) !== false) {
-                    $status = "Ruido";
-                    $motivoDescarte = "Termo de ruido detectado no grupo '$grupo': '$termRuido'";
-                    break 2;
-                }
-            }
-        }
-    }
-
-    // d. Validação Central de IA
-    if ($status === "Valido") {
-        $ehIA = false;
-        foreach ($validadoresIA as $v) {
-            if (strpos($textoTotal, $v) !== false) {
-                $ehIA = true;
-                break;
-            }
-        }
-        if (!$ehIA) {
-            $status = "Ruido";
-            $motivoDescarte = "Ausencia de termos validadores de Inteligencia Artificial";
-        }
-    }
-
-    // e. Validação de Domínio Agrícola
-    if ($status === "Valido") {
-        $ehAgro = false;
-        foreach ($validadoresAgro as $a) {
-            if (strpos($textoTotal, $a) !== false) {
-                $ehAgro = true;
-                break;
-            }
-        }
-        if (!$ehAgro) {
-            $status = "Ruido";
-            $motivoDescarte = "Ausencia de termos validadores do dominio agricola/rural";
-        }
-    }
 
     // -------------------------------------------------------------------------------------
     // 5.2 EXTRAÇÃO PADRONIZADA DE PAÍSES
@@ -189,23 +121,7 @@ foreach ($artigos as $bloco) {
     $subCatDominante = "Nao Classificado";
 
     if ($status === "Valido") {
-        foreach ($categoriasNovas as $mainCat => $subs) {
-            foreach ($subs as $subCat => $keywords) {
-                $score = 0;
-                foreach ($keywords as $w) {
-                    $score += substr_count(strtolower($campos["TI"] ?? ""), $w) * 3;
-                    $score += substr_count(strtolower($campos["DE"] ?? ""), $w) * 2;
-                    $score += substr_count(strtolower($campos["ID"] ?? ""), $w) * 2;
-                    $score += substr_count(strtolower($campos["AB"] ?? ""), $w) * 1;
-                }
-                if ($score > 0) {
-                    $subScores[$subCat] = [
-                        'score' => $score,
-                        'main' => $mainCat
-                    ];
-                }
-            }
-        }
+        $subScores = pontuarSubcategorias($campos);
 
         // Determina a subcategoria dominante
         if (count($subScores) > 0) {
@@ -218,11 +134,14 @@ foreach ($artigos as $bloco) {
             // Em caso de não enquadramento nas subcategorias, marca como ruído
             $status = "Ruido";
             $motivoDescarte = "Não enquadrado em nenhuma categoria específica de IA do Campo";
+            $etapaDescarte = "Sem pontuacao em nenhuma subcategoria";
             $estatisticas['Ruidos']++;
+            $estatisticas['Etapas'][$etapaDescarte] = ($estatisticas['Etapas'][$etapaDescarte] ?? 0) + 1;
             $estatisticas['Motivos_Descarte'][$motivoDescarte] = ($estatisticas['Motivos_Descarte'][$motivoDescarte] ?? 0) + 1;
         }
     } else {
         $estatisticas['Ruidos']++;
+        $estatisticas['Etapas'][$etapaDescarte] = ($estatisticas['Etapas'][$etapaDescarte] ?? 0) + 1;
         $estatisticas['Motivos_Descarte'][$motivoDescarte] = ($estatisticas['Motivos_Descarte'][$motivoDescarte] ?? 0) + 1;
     }
 
@@ -275,12 +194,17 @@ file_put_contents(__DIR__ . '/../redes_vosviewer/tesauro.txt', $tes);
 // 8. RELATÓRIO DO PROCESSAMENTO
 // -----------------------------------------------------------------------------------------
 echo "\n=======================================================\n";
-echo "       RELATÓRIO DE CLASSIFICAÇÃO - RURAL IA v13.2\n";
+echo "       RELATÓRIO DE CLASSIFICAÇÃO - RURAL IA v14.0\n";
 echo "=======================================================\n";
 echo "Total de blocos processados: " . $totalLidos . "\n";
 echo "Artigos Válidos Classificados: " . $estatisticas['Validos_Classificados'] . "\n";
 echo "Artigos Válidos Pendentes de Revisão: " . $estatisticas['Validos_Pendentes'] . "\n";
 echo "Artigos Descartados (Ruído): " . $estatisticas['Ruidos'] . "\n";
+echo "-------------------------------------------------------\n";
+echo "Descartes por etapa da triagem:\n";
+foreach ($estatisticas['Etapas'] as $etapa => $qtd) {
+    echo " - $etapa: $qtd\n";
+}
 echo "-------------------------------------------------------\n";
 echo "Principais Motivos de Descarte:\n";
 arsort($estatisticas['Motivos_Descarte']);
