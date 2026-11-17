@@ -1,8 +1,8 @@
-# UFSCar PPGCTS - Classificador Sociotécnico de IA no Campo (v13.2)
+# UFSCar PPGCTS - Classificador Sociotécnico de IA no Campo (v14.0)
 
 Este repositório contém a infraestrutura e os scripts em PHP desenvolvidos para a dissertação de mestrado (PPGCTS / UFSCar) de **Jonas Ernesto Poli**. O sistema realiza a classificação automatizada e a análise sociotécnica de grandes volumes de artigos científicos extraídos da base **Web of Science (WoS)**.
 
-O classificador foi projetado seguindo preceitos da sociologia da tecnologia, organizando a pesquisa em **10 Categorias Sociotécnicas Principais** e **29 Subcategorias Específicas**, permitindo visualizar graficamente a coocorrência e a dinâmica geográfica e temporal da Inteligência Artificial aplicada ao trabalho rural.
+O classificador foi projetado seguindo preceitos da sociologia da tecnologia, organizando a pesquisa em **10 Categorias Sociotécnicas Principais** e **31 Subcategorias Específicas** (29 delas atribuídas como subcategoria dominante a pelo menos um registro), permitindo visualizar graficamente a coocorrência e a dinâmica geográfica e temporal da Inteligência Artificial aplicada ao trabalho rural.
 
 ---
 
@@ -13,11 +13,11 @@ O projeto está estritamente organizado em uma estrutura modular:
 ```text
 ufscar-ppgcts-classificador/
 ├── fontes_wos/              # Arquivos TXT originais exportados do Web of Science
-│   ├── rural_and_AI_01.txt a rural_and_AI_21_1461.txt
+│   ├── rural_and_AI_01.txt a rural_and_AI_17_8500.txt (17 arquivos, 10.461 registros)
 │   └── todos_arquivos_juntos.txt  # Base de dados unificada (gerada automaticamente)
 │
 ├── scripts/                 # Scripts PHP de processamento e análise
-│   ├── config_categorias.php           # Dicionário centralizado de categorias, IA, Agro e Ruídos (DRY)
+│   ├── config_categorias.php           # Dicionários (categorias, IA, Agro, Ruídos) e regras comuns de correspondência, triagem e pontuação
 │   ├── unificar_fontes.php            # Une os arquivos TXT individuais da WoS
 │   ├── classifica.php                  # Classificador principal binário (Válidos vs Ruído)
 │   ├── gerar_resumo.php                # Consolida as contagens de classificações
@@ -25,11 +25,11 @@ ufscar-ppgcts-classificador/
 │   ├── gerar-vosviewer-categorias.php  # Gera rede de coocorrência de 10 categorias para VOSviewer
 │   ├── gerar-gephi-categorias.php     # Gera nós/arestas de coocorrência para Gephi
 │   ├── gerar_mapa_palavras_categorias.php # Gera rede pulverizada das palavras-chave mapeadas
-│   ├── gerar_vosviewer_subcategorias.php # Gera rede acadêmica de 29 subcategorias
+│   ├── gerar_vosviewer_subcategorias.php # Gera a rede de coocorrência das subcategorias
 │   └── colorir_mapa_vosviewer.php     # Pós-processador inteligente que colore mapas exportados do VOSviewer
 │
 ├── resultados/              # Planilhas CSV geradas para análise quantitativa
-│   ├── artigos_classificados.csv      # Base limpa de artigos classificados (abrir no Excel)
+│   ├── artigos_classificados.csv      # Base limpa de artigos classificados (gerada localmente pelo classifica.php; não versionada)
 │   ├── artigos_descartados_ruido.csv  # Artigos descartados com justificativa detalhada
 │   ├── contagem_classificacoes.csv    # Resumo quantitativo de categorias e subcategorias
 │   └── classificacoes_por_ano.csv     # Matriz pivotada temporal
@@ -53,13 +53,39 @@ ufscar-ppgcts-classificador/
 
 ## 🛠️ Como Funciona o Classificador (Fluxo Científico)
 
-O classificador utiliza um método de **pontuação ponderada e filtragem multi-estágio**:
+O classificador utiliza um método de **pontuação ponderada e filtragem multi-estágio**. Todas as regras ficam em `scripts/config_categorias.php`, de modo que todos os programas aplicam os mesmos critérios.
+
+**Regra de correspondência dos termos (válida em todas as etapas):** os termos são procurados a partir do início das palavras (`crop` encontra `crops` e `cropland`, mas não `outcrop`). As siglas curtas, de até três caracteres (como `rag`, `llm` e `uav`), valem apenas como palavra inteira, admitido o plural em "s" (`llms`, `uavs`), para evitar correspondências espúrias, como a de `rag` dentro de `average` ou `storage`.
+
 1. **Filtro Temporal:** Apenas artigos publicados do ano **2000** em diante são considerados.
 2. **Filtro de Retratações:** Artigos contendo `"retracted"` ou `"retraction"` no título são automaticamente descartados.
-3. **Filtro Semântico de Ruído:** O script busca por mais de 50 termos nocivos listados em `config_categorias.php` (como biologia médica, energia eólica pura, macroeconomia puramente teórica) para remover falsos positivos.
+3. **Filtro Semântico de Ruído:** O script busca os 78 termos do dicionário de ruídos, agrupados em doze frentes de exclusão em `config_categorias.php` (como medicina humana, energia eólica e solar, macroeconomia sem IA no campo), para remover falsos positivos.
 4. **Validação de IA e Domínio Agrícola:** Exige a co-presença de pelo menos um validador de IA (ex: `machine learning`, `neural`, `robot`, `sensor`) e um validador de domínio agrícola (ex: `crop`, `soil`, `pasture`, `livestock`).
 5. **Score de Subcategoria:** O título (peso 3), palavras-chave do autor (peso 2), palavras-chave do sistema (peso 2) e resumo (peso 1) são escaneados. O artigo é classificado na **Subcategoria** com a maior pontuação acumulada, que herda sua **Categoria Principal**. Caso nenhuma pontuação seja maior que zero, o artigo é descartado como ruído.
 6. **Padronização de Países:** Extrai o país de afiliação do autor e padroniza geograficamente (ex: unifica "United States", "USA", "U.S.A." em "USA", unifica grafias de "China", "Brazil", "Germany", etc.).
+
+---
+
+## 📊 Resultado da versão final (coleta na WoS em 17 de abril de 2026)
+
+Estes são os números relatados na dissertação e reproduzidos pela execução dos scripts deste repositório:
+
+| Etapa | Registros |
+|---|---:|
+| Registros exportados da WoS | 10.461 |
+| Descartados: anteriores a 2000 | 252 |
+| Descartados: retratados | 37 |
+| Descartados: dicionário de ruídos (10 das 12 frentes com ocorrência; energia eólica e solar 401, medicina humana 234) | 723 |
+| Descartados: sem termos de IA | 916 |
+| Descartados: sem termos do domínio agrícola | 0 |
+| Descartados: sem pontuação em nenhuma subcategoria | 2.136 |
+| **Classificados** | **6.397 (61,2%)** |
+
+As contagens por categoria e subcategoria estão em `resultados/contagem_classificacoes.csv`. Das 31 subcategorias do dicionário, 29 aparecem como subcategoria dominante; *6.2. Controle de estoque e insumos* e *7.2. Diagnóstico por imagem* pontuam em alguns artigos (e por isso aparecem como nós na rede de coocorrência), mas em nenhum deles obtêm a maior pontuação.
+
+### Mudança em relação à v13.2
+
+A v13.2 procurava os termos como simples trechos de texto (`strpos`), o que gerava correspondências espúrias (por exemplo, `rag` dentro de `average` e `storage`) e resultava em 7.122 registros classificados. A v14.0 aplica a regra de correspondência descrita acima, ignora o marcador `EF` de fim de arquivo na contagem de registros e faz a rede de subcategorias usar exatamente a mesma triagem do classificador.
 
 ---
 
@@ -99,8 +125,8 @@ php scripts/gerar-vosviewer-categorias.php
 php scripts/gerar-gephi-categorias.php
 ```
 
-#### B. Rede Acadêmica de 29 Subcategorias (A Mais Recomendada para Validação)
-Esta visualização é a mais robusta academicamente, exibindo 29 nós (as subcategorias) interconectados pela coocorrência de artigos, coloridos automaticamente em conformidade com suas 10 categorias mãe:
+#### B. Rede Acadêmica das Subcategorias (A Mais Recomendada para Validação)
+Esta visualização é a mais robusta academicamente, exibindo as subcategorias como nós (31, pois todas pontuam em ao menos um artigo classificado) interconectados pela coocorrência de artigos, coloridos automaticamente em conformidade com suas 10 categorias mãe:
 ```bash
 php scripts/gerar_vosviewer_subcategorias.php
 ```
@@ -171,6 +197,12 @@ Se você gerou um mapa natural e pulverizado diretamente no VOSviewer contendo m
     - 10.1. Monitoramento ambiental
     - 10.2. Uso eficiente de insumos
     - 10.3. Carbono e sustentabilidade
+
+---
+
+## 📖 Trabalho de origem
+
+POLI, J. E. **O chatbot como mediador sociotécnico**: inteligência artificial e comunicação dialógica na Assistência Técnica e Extensão Rural (Ater). 2026. Dissertação (Mestrado em Ciência, Tecnologia e Sociedade) - Universidade Federal de São Carlos, São Carlos, 2026.
 
 ---
 

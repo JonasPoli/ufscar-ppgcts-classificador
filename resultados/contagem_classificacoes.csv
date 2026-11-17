@@ -1,40 +1,40 @@
 Tipo_Classificacao;Item_Classificado;Quantidade
-Categoria_Principal;"1. IA para agricultura de precisão";2920
-Categoria_Principal;"7. IA para assistência técnica e extensão rural";1213
-Categoria_Principal;"5. IA embarcada em máquinas, drones e robôs";788
-Categoria_Principal;"2. IA para previsão e tomada de decisão";722
-Categoria_Principal;"8. IA para comercialização e mercado";443
-Categoria_Principal;"3. IA para irrigação e uso da água";417
-Categoria_Principal;"4. IA para pecuária de precisão";356
-Categoria_Principal;"10. IA para sustentabilidade e conformidade ambiental";208
-Categoria_Principal;"9. IA para pós-colheita, armazenamento e agroindústria";37
+Categoria_Principal;"1. IA para agricultura de precisão";2743
+Categoria_Principal;"5. IA embarcada em máquinas, drones e robôs";796
+Categoria_Principal;"2. IA para previsão e tomada de decisão";728
+Categoria_Principal;"7. IA para assistência técnica e extensão rural";610
+Categoria_Principal;"8. IA para comercialização e mercado";458
+Categoria_Principal;"3. IA para irrigação e uso da água";422
+Categoria_Principal;"4. IA para pecuária de precisão";351
+Categoria_Principal;"10. IA para sustentabilidade e conformidade ambiental";223
+Categoria_Principal;"9. IA para pós-colheita, armazenamento e agroindústria";48
 Categoria_Principal;"6. IA para gestão da propriedade rural";18
-Subcategoria;"1.3. Detecção de plantas daninhas, pragas e doenças";1818
-Subcategoria;"7.1. Assistentes virtuais agrícolas";1128
-Subcategoria;"1.1. Monitoramento da lavoura";1085
-Subcategoria;"2.1. Previsão de produtividade";573
-Subcategoria;"5.3. Robôs agrícolas";485
-Subcategoria;"8.3. Rastreabilidade e cadeia produtiva";340
-Subcategoria;"4.1. Monitoramento da saúde animal";297
-Subcategoria;"5.2. Drones com IA";293
-Subcategoria;"3.1. Irrigação inteligente";261
-Subcategoria;"10.3. Carbono e sustentabilidade";170
-Subcategoria;"3.2. Detecção de estresse hídrico";147
-Subcategoria;"2.3. Análise de risco";96
-Subcategoria;"7.3. Recomendação técnica personalizada";85
-Subcategoria;"8.2. Classificação de produtos";82
-Subcategoria;"2.2. Previsão climática aplicada ao manejo";53
-Subcategoria;"4.3. Reprodução e bem-estar";37
-Subcategoria;"10.1. Monitoramento ambiental";26
-Subcategoria;"9.2. Controle de qualidade";25
-Subcategoria;"8.1. Previsão de preços e demanda";21
-Subcategoria;"1.2. Aplicação localizada de insumos";17
+Subcategoria;"1.3. Detecção de plantas daninhas, pragas e doenças";1619
+Subcategoria;"1.1. Monitoramento da lavoura";1108
+Subcategoria;"2.1. Previsão de produtividade";581
+Subcategoria;"7.1. Assistentes virtuais agrícolas";516
+Subcategoria;"5.3. Robôs agrícolas";488
+Subcategoria;"8.3. Rastreabilidade e cadeia produtiva";359
+Subcategoria;"5.2. Drones com IA";299
+Subcategoria;"4.1. Monitoramento da saúde animal";295
+Subcategoria;"3.1. Irrigação inteligente";266
+Subcategoria;"10.3. Carbono e sustentabilidade";180
+Subcategoria;"3.2. Detecção de estresse hídrico";148
+Subcategoria;"7.3. Recomendação técnica personalizada";94
+Subcategoria;"2.3. Análise de risco";89
+Subcategoria;"8.2. Classificação de produtos";77
+Subcategoria;"2.2. Previsão climática aplicada ao manejo";58
+Subcategoria;"4.3. Reprodução e bem-estar";34
+Subcategoria;"10.1. Monitoramento ambiental";31
+Subcategoria;"9.2. Controle de qualidade";31
+Subcategoria;"8.1. Previsão de preços e demanda";22
+Subcategoria;"1.2. Aplicação localizada de insumos";16
 Subcategoria;"4.2. Manejo alimentar";13
 Subcategoria;"10.2. Uso eficiente de insumos";12
+Subcategoria;"9.3. Previsão de perdas";12
 Subcategoria;"6.3. Planejamento operacional";10
-Subcategoria;"9.3. Previsão de perdas";10
-Subcategoria;"5.1. Máquinas agrícolas inteligentes";10
 Subcategoria;"4.4. Manejo de pastagens";9
-Subcategoria;"3.3. Gestão de reservatórios e bombeamento";9
+Subcategoria;"5.1. Máquinas agrícolas inteligentes";9
 Subcategoria;"6.1. Gestão financeira e custos de produção";8
-Subcategoria;"9.1. Monitoramento de armazenamento";2
+Subcategoria;"3.3. Gestão de reservatórios e bombeamento";8
+Subcategoria;"9.1. Monitoramento de armazenamento";5

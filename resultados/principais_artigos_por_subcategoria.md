@@ -78,7 +78,7 @@ Este documento apresenta os 3 artigos mais citados na base Web of Science (WoS) 
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
 | **1** | 167 | 2024 | `WOS:001301242900001` | Soil, air, and water pollution from mining and industrial activities: Sources of pollution, environmental impacts, and preventi... | Dehkordi, MM Nodeh, ZP Dehkordi, KS Salmanvandi, H Khorje... | [10.1016/j.rineng.2024.102729](https://doi.org/10.1016/j.rineng.2024.102729) |
 | **2** | 105 | 2024 | `WOS:001138683100007` | Cyanobacteria Harmful Algae Blooms: Causes, Impacts, and Risk Management | Igwaran, A Kayode, AJ Moloantoa, KM Khetsha, ZP Unuofin, JO | [10.1007/s11270-023-06782-y](https://doi.org/10.1007/s11270-023-06782-y) |
-| **3** | 90 | 2020 | `WOS:000502887900062` | Investigation of polycyclic aromatic hydrocarbons in soils from Caserta provincial territory, southern Italy: Spatial distribut... | Qi, PZ Qu, CK Albanese, S Lima, A Cicchella, D Hope, D Ce... | [10.1016/j.jhazmat.2019.121158](https://doi.org/10.1016/j.jhazmat.2019.121158) |
+| **3** | 75 | 2025 | `WOS:001508703300001` | The Role of Artificial Intelligence in Advancing Biosensor Technology: Past, Present, and Future Perspectives | Akkas, T Reshadsedghi, M Sen, M Kiliç, V Horzum, N | [10.1002/adma.202504796](https://doi.org/10.1002/adma.202504796) |
 
 ## Categoria: 3. IA para irrigação e uso da água
 
@@ -191,8 +191,8 @@ Este documento apresenta os 3 artigos mais citados na base Web of Science (WoS) 
 | Pos | Citações | Ano | ID WoS (UT) | Título do Artigo | Autores | DOI |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
 | **1** | 445 | 2024 | `WOS:001173153100001` | A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges | Raiaan, MAK Mukta, MSH Fatema, K Fahad, NM Sakib, S Mim, ... | [10.1109/ACCESS.2024.3365742](https://doi.org/10.1109/ACCESS.2024.3365742) |
-| **2** | 261 | 2022 | `WOS:000823123200001` | Ground-Level NO2 Surveillance from Space Across China for High Resolution Using Interpretable Spatiotemporally Weighted Artific... | Wei, J Liu, S Li, ZQ Liu, C Qin, K Liu, X Pinker, RT Dick... | [10.1021/acs.est.2c03834](https://doi.org/10.1021/acs.est.2c03834) |
-| **3** | 255 | 2020 | `WOS:000504621400001` | Electronic Nose and Its Applications: A Survey | Karakaya, D Ulucan, O Turkan, M | [10.1007/s11633-019-1212-9](https://doi.org/10.1007/s11633-019-1212-9) |
+| **2** | 144 | 2024 | `WOS:001160337400001` | Enhancing Work Productivity through Generative Artificial Intelligence: A Comprehensive Literature Review | Al Naqbi, H Bahroun, Z Ahmed, V | [10.3390/su16031166](https://doi.org/10.3390/su16031166) |
+| **3** | 142 | 2025 | `WOS:001171050800001` | Exploring User Adoption of ChatGPT: A Technology Acceptance Model Perspective | Ma, JJ Wang, PC Li, BQ Wang, T Pang, XS Wang, DK | [10.1080/10447318.2024.2314358](https://doi.org/10.1080/10447318.2024.2314358) |
 
 ### Subcategoria: 7.3. Recomendação técnica personalizada
 
@@ -235,7 +235,8 @@ Este documento apresenta os 3 artigos mais citados na base Web of Science (WoS) 
 | Pos | Citações | Ano | ID WoS (UT) | Título do Artigo | Autores | DOI |
 | :---: | :---: | :---: | :---: | :--- | :--- | :--- |
 | **1** | 24 | 2025 | `WOS:001522322200003` | Artificial intelligence for food safety: From predictive models to real-world safeguards | Balakrishnan, P Leema, AA Jothiaruna, N Assudani, PJ Sank... | [10.1016/j.tifs.2025.105153](https://doi.org/10.1016/j.tifs.2025.105153) |
-| **2** | 6 | 2025 | `WOS:001546269500002` | A comprehensive review of post-harvest agricultural product deterioration signature volatile organic compounds | Sun, L Ma, JN Purcaro, G Wang, G Jin, J Xing, FG | [10.1016/j.fochx.2025.102866](https://doi.org/10.1016/j.fochx.2025.102866) |
+| **2** | 19 | 2022 | `WOS:000896759800003` | Prototype wireless sensor network and Internet of Things platform for real-time monitoring of intergranular equilibrium moistur... | Coradi, PC Lutz, E Bilhalva, ND Jaques, LBA Leal, MM Teod... | [10.1016/j.eswa.2022.118242](https://doi.org/10.1016/j.eswa.2022.118242) |
+| **3** | 11 | 2025 | `WOS:001428424300001` | AI-driven grain storage solutions: Exploring current technologies, applications, and future trends | Anukiruthika, T Jayas, DS | [10.1016/j.jspr.2025.102588](https://doi.org/10.1016/j.jspr.2025.102588) |
 
 ### Subcategoria: 9.2. Controle de qualidade
 

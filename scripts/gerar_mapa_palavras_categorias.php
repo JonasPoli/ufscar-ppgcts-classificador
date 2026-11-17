@@ -68,7 +68,7 @@ while (($row = fgetcsv($handle, 0, ';', '"', "\\")) !== false) {
     // Identifica quais termos únicos aparecem neste artigo
     $termosPresentes = [];
     foreach ($termosUnicos as $w) {
-        if (strpos($textoTotal, $w) !== false) {
+        if (contemTermo($textoTotal, $w)) {
             $termosPresentes[] = $w;
             $ocorrencias[$w]++;
         }
